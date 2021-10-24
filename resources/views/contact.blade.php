@@ -7,6 +7,31 @@
     <title>Document</title>
 </head>
 <body>
-  <h2>  Contact Us  </h2>
+  {{-- <h2>  Contact Us  </h2>
+  <h4> link !</h4> --}}
+  {{-- @foreach ($tasks as $task)
+   <ul>
+       <li>{{$task}}</li>
+   </ul>
+
+  @endforeach --}}
+   <ul>
+       @foreach ($tasks as $index=>$task)
+       <li>{{++$index}}</li>
+       <li>{{$task}}</li>
+       @endforeach
+   </ul>
+   <h1>{{$tasks['task-1']}}</h1>
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

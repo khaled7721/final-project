@@ -17,19 +17,30 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/about',function (){
-    $name ='Ahmed';
-    $age ='22';
+    $name ='';
+    $age = '';
     // return view('about',['name'=>$name, 'age'=>$age]);
     // return view('about')->with('name',$name)->with('age',$age);
-    return view('about',compact('age','name'));              //the best and easy one of them.
+    return view('about',compact('name','age'));             //the best and easy one of them.
 });
 
+Route::post('/about',function (){
+    $name = $_REQUEST['name'];
+    $age = $_REQUEST['age'];
+    return view('about',compact('name','age'));              //the best and easy one of them.
+});
 Route::get('/contact',function (){
-    
-    return view('contact');
-});
+    // $tasks=[
+    //   'task-1',
+    //   'task-2',
+    //   'task-3'
+    // ];
 
-// Route::get('/calculater',function (){
-    
-//     return view('calculater');
-// });
+
+    $tasks=[
+    'task-1'=>'Maker your assignment',
+    'task-2'=>'Check your phone',
+    'task-3'=>'Watch a match'
+    ];
+    return view('contact',compact('tasks'));
+});

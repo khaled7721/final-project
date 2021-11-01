@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,34 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function(){
     return view('welcome');
 });
-Route::get('/about',function (){
-    $name ='';
-    $age = '';
-    // return view('about',['name'=>$name, 'age'=>$age]);
-    // return view('about')->with('name',$name)->with('age',$age);
-    return view('about',compact('name','age'));             //the best and easy one of them.
-});
+Route::get('/about',[TaskController::class,'about']);
+Route::post('/about',[TaskController::class,'shows']);
+Route::get('/contact',[TaskController::class,'index']);
+Route::get('/tasks', [TaskController::class,'tasks']);
+// Route::get('/show/{id}',[TaskController::class,'show']);
+Route::get('/contact/{id}',[TaskController::class,'show']);
 
-Route::post('/about',function (){
-    $name = $_REQUEST['name'];
-    $age = $_REQUEST['age'];
-    return view('about',compact('name','age'));              //the best and easy one of them.
-});
-Route::get('/contact',function (){
-    // $tasks=[
-    //   'task-1',
-    //   'task-2',
-    //   'task-3'
-    // ];
-
-
-    $tasks=[
-    'task-1'=>'Maker your assignment',
-    'task-2'=>'Check your phone',
-    'task-3'=>'Watch a match'
-    ];
-    return view('contact',compact('tasks'));
-});

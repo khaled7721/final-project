@@ -3,6 +3,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
+use Facade\FlareClient\View;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,4 +25,14 @@ Route::get('/contact',[TaskController::class,'index']);
 Route::get('/tasks', [TaskController::class,'tasks']);
 // Route::get('/show/{id}',[TaskController::class,'show']);
 Route::get('/contact/{id}',[TaskController::class,'show']);
+Route::get('/app', function(){
+    return view('app');
+});
+Route::get('/apps', function(){
+    return view('apps');
+});
+Route::get('/taskes', function () {
+return view('taskes');
+});
+
 

@@ -61,7 +61,11 @@ class TaskController extends Controller
     //  return view('show', compact('task'));
     // }
 
-
+   
+    public function taskes()
+    {
+        return view('taskes');
+    }
 
 
 }

@@ -25,14 +25,5 @@ Route::get('/contact',[TaskController::class,'index']);
 Route::get('/tasks', [TaskController::class,'tasks']);
 // Route::get('/show/{id}',[TaskController::class,'show']);
 Route::get('/contact/{id}',[TaskController::class,'show']);
-Route::get('/app', function(){
-    return view('app');
-});
-Route::get('/apps', function(){
-    return view('apps');
-});
-Route::get('/taskes', function () {
-return view('taskes');
-});
-
-
+Route::get('/app',[TaskController::class,'app']);
+Route::get('/taskes',[TaskController::class,'taskes']);

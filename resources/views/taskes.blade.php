@@ -1,6 +1,8 @@
-    @extends('layout-app')
-    @section('content')
-    <div class="container">
+@extends('layouts.app')
+{{-- @include('layouts.app') --}}
+@section('content')
+
+<div class="container">
         <div class="col-sm-offset-2 col-sm-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -32,6 +34,7 @@
                     </form>
                 </div>
             </div>
+
 
             <!-- Current Tasks -->
                 <div class="panel panel-default">
@@ -88,5 +91,12 @@
                 </div>
         </div>
 </div>
+
+<!-- JavaScripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>
 
 
